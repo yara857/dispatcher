@@ -28,6 +28,7 @@ const SignUp = () => {
         usdot_certificate_url: null,
         usdot_number: '',
     });
+    
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
@@ -57,10 +58,8 @@ const SignUp = () => {
               });
 
             console.log('Signup successful:', response.data);
-            // Handle success, e.g., redirect or show a success message
         } catch (error) {
             console.error('Signup failed:', error.message);
-            // Handle error, e.g., show an error message to the user
         }
     };
 

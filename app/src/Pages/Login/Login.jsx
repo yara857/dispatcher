@@ -27,34 +27,34 @@ const Login = () => {
     };
 
 
-     (
-        <div className='container'>
-            <h2>Login</h2>
-            <form method='POST'>
-                <label>
-                Email:
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </label>
-                <br />
-                <button type="button" onClick={handleLogin}>
-                    Login
-                </button>
-            </form>
-            <p>If you haven't an email Please <span>Signup</span> </p>
+    return (
+        <div id="card">
+            <div id="card-content">
+                <div id="card-title">
+                    <h2>LOGIN</h2>
+                    <div class="underline-title"></div>
+                </div>
+                <form method="post" class="form">
+                    <label for="user-email" style={{paddingTop:"13px"}}>
+                        &nbsp;Email
+                    </label>
+                    <input id="user-email" class="form-content" type="email" name="email" value={email}
+                        onChange={(e) => setEmail(e.target.value)} autocomplete="on" required />
+                    <div class="form-border"></div>
+                    <label for="user-password" style={{paddingTop:"22px"}}>&nbsp;Password
+                    </label>
+                    <input id="user-password" class="form-content" type="password" value={password}
+                        onChange={(e) => setPassword(e.target.value)} name="password" required />
+                    <div class="form-border"></div>
+                    <p>
+                        <legend id="forgot-pass">Forgot password?</legend>
+                    </p>
+                    <input id="submit-btn" type="submit" name="submit" value="LOGIN" onClick={handleLogin} />
+
+                </form>
+            </div>
         </div>
+
     )
 }
 

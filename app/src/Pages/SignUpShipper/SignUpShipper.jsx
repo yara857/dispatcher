@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Signupshipper.css'
+// import './Signupshipper.css'
 
 const SignUpShipper = () => {
   const [formData, setFormData] = useState({
@@ -46,8 +46,8 @@ const SignUpShipper = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Shipper Signup</h2>
+    <div className="w-16 md:w-32 lg:w-48">
+      <h2 className=''>Shipper Signup</h2>
       <form method='POST'>
         <label>
           Address:

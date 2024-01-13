@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 // import './Signupshipper.css'
+import { useNavigate } from 'react-router-dom';
 
 const SignUpShipper = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ const SignUpShipper = () => {
     phone: '',
     image_url: '',
   });
+
+  const navigate = useNavigate()
 
   const baseUrl = 'https://uship.onrender.com';
 
@@ -36,6 +39,8 @@ const SignUpShipper = () => {
       if (response.ok) {
         // Handle successful signup (e.g., redirect, set user state)
         console.log('Signup successful!');
+        navigate(`/shipperhome/${formData.name}`)
+
       } else {
         // Log more details about the error
         console.error('Signup failed!', responseData || 'Unknown error');
@@ -43,10 +48,11 @@ const SignUpShipper = () => {
     } catch (error) {
       console.error('Error during signup:', error);
     }
+    
   };
 
   return (
-    <div className="w-16 md:w-32 lg:w-48">
+    <div className="">
       <h2 className=''>Shipper Signup</h2>
       <form method='POST'>
         <label>
